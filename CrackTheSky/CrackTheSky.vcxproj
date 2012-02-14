@@ -37,16 +37,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\SFML\SFML2\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\BOOST\BOOST1480\include;C:\SFML\SFML2\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\SFML\SFML2\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\BOOST\BOOST1480\libs;C:\SFML\SFML2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\SFML\SFML2\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\BOOST\BOOST1480\include;C:\SFML\SFML2\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>C:\SFML\SFML2\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\BOOST\BOOST1480\libs;C:\SFML\SFML2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -74,7 +74,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractActor.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MovableActor.cpp" />
+    <ClCompile Include="Pose.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstractActor.h" />
+    <ClInclude Include="MovableActor.h" />
+    <ClInclude Include="Pose.h" />
+    <ClInclude Include="TextureLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
