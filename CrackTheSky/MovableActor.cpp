@@ -6,6 +6,10 @@ MovableActor::MovableActor(void)
 	
 }
 
+MovableActor::MovableActor(int id) : AbstractActor(id) {
+
+}
+
 void MovableActor::update(float dt) {
 	sf::Vector2f offset = m_acceleration.getDirection()*dt;
 	float rotateOffset = m_acceleration.getRotation()*dt;

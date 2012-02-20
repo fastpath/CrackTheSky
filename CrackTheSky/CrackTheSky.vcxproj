@@ -75,6 +75,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractActor.cpp" />
+    <ClCompile Include="ActorManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
     <ClCompile Include="Pose.cpp" />
@@ -82,9 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractActor.h" />
+    <ClInclude Include="ActorManager.h" />
     <ClInclude Include="MovableActor.h" />
     <ClInclude Include="Pose.h" />
     <ClInclude Include="TextureLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\xml\MovableActors.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

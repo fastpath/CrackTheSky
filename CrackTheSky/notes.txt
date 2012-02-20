@@ -1,0 +1,10 @@
+CrackTheSky
+
+Input
+	- Fängt Texteingabe ab
+	- Schickt richtiges Event an den Manager
+
+EventManager
+	- bekommt Event
+	- Eventlistener registrieren sich
+	- verarbeitet Event bei den richtigen Event Listenern

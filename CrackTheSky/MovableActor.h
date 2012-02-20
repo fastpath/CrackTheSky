@@ -7,6 +7,7 @@ class MovableActor : public AbstractActor
 {
 public:
 	MovableActor(void);
+	MovableActor(int id);
 
 	void accelerate(Pose& pose);
 	Pose& getAcceleration();

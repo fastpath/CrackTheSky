@@ -28,6 +28,9 @@ int main ()
 	cody->SetScale(0.2,0.2);
 	actors.push_back(cody);
 
+	std::cout << cody->GetTextureRect().Height << std::endl;
+	std::cout << cody->GetGlobalBounds().Height << std::endl;
+
 	boost::shared_ptr<MovableActor> astroid1(new MovableActor());
 	astroid1->SetTexture(*TextureLoader::getTexture("astroid1_600x500"));
 	astroid1->SetPosition(500.0,500.0);
@@ -55,7 +58,7 @@ int main ()
 	sf::Clock clock;
 
 	float t = 0.0;
-	float speed = 200.0;
+	float speed = 400.0;
 	sf::Time currentTime = clock.GetElapsedTime();
 
 	Window.SetFramerateLimit(FRAMERATE);
@@ -83,6 +86,7 @@ int main ()
 		}
 
 		sf::Vector2f direction = cody->getAcceleration().getDirection();
+			std::cout << "Acc x " << cody->getAcceleration().getDirection().x << "  y " << cody->getAcceleration().getDirection().y << std::endl;
 		if (sf::Keyboard::IsKeyPressed(sf::Keyboard::W)) {
 			direction.y = -speed;
 		}
