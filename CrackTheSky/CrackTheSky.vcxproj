@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractActor.cpp" />
     <ClCompile Include="ActorManager.cpp" />
+    <ClCompile Include="libs\pugixml\pugixml.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
     <ClCompile Include="Pose.cpp" />
@@ -84,6 +85,8 @@
   <ItemGroup>
     <ClInclude Include="AbstractActor.h" />
     <ClInclude Include="ActorManager.h" />
+    <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="libs\pugixml\pugixml.hpp" />
     <ClInclude Include="MovableActor.h" />
     <ClInclude Include="Pose.h" />
     <ClInclude Include="TextureLoader.h" />

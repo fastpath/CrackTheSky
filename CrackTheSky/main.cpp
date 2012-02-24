@@ -7,6 +7,7 @@
 #include "TextureLoader.h"
 #include "MovableActor.h"
 #include "Pose.h"
+#include "ActorManager.h"
 
 const int FRAMERATE = 60;
 const float DT = 1.0/FRAMERATE;
@@ -18,6 +19,8 @@ int main ()
 {
 	sf::RenderWindow Window(sf::VideoMode(800,600,32),"SFML DEMO");
 	sf::ContextSettings cs = Window.GetSettings();
+
+	ActorManager::getNewMovableActor("cody");
 
 
 	boost::container::vector<boost::shared_ptr<MovableActor> > actors;
@@ -86,7 +89,7 @@ int main ()
 		}
 
 		sf::Vector2f direction = cody->getAcceleration().getDirection();
-			std::cout << "Acc x " << cody->getAcceleration().getDirection().x << "  y " << cody->getAcceleration().getDirection().y << std::endl;
+		//std::cout << "Acc x " << cody->getAcceleration().getDirection().x << "  y " << cody->getAcceleration().getDirection().y << std::endl;
 		if (sf::Keyboard::IsKeyPressed(sf::Keyboard::W)) {
 			direction.y = -speed;
 		}

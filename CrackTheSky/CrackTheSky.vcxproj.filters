@@ -42,6 +42,9 @@
     <ClCompile Include="ActorManager.cpp">
       <Filter>Source Files\GameLogic</Filter>
     </ClCompile>
+    <ClCompile Include="libs\pugixml\pugixml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureLoader.h">
@@ -58,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="ActorManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\pugixml\pugiconfig.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\pugixml\pugixml.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

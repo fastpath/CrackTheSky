@@ -1,13 +1,15 @@
 #include <boost/container/map.hpp>
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include "AbstractActor.h"
+#include "MovableActor.h"
 #include <string>
 #include <iostream>
+#include "libs\pugixml\pugixml.hpp"
 
 class ActorManager
 {
 public:
-	static boost::container::map<std::string,boost::shared_ptr<AbstractActor> > s_actorMap;
+	static boost::container::map<int,boost::shared_ptr<AbstractActor> > s_actorMap;
 
 	ActorManager(void);
 	~ActorManager(void);
