@@ -17,7 +17,7 @@ boost::shared_ptr<sf::Texture> TextureLoader::getTexture(std::string fileName) {
 		return s_textures[fileName];
 	} else {
 		boost::shared_ptr<sf::Texture> newTexure(new sf::Texture);
-		newTexure->LoadFromFile(s_textureFolder+fileName+".png");
+		newTexure->loadFromFile(s_textureFolder+fileName+".png");
 		s_textures[fileName] = newTexure;
 		return newTexure;
 	}

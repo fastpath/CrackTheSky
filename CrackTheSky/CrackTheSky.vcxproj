@@ -76,6 +76,8 @@
   <ItemGroup>
     <ClCompile Include="AbstractActor.cpp" />
     <ClCompile Include="ActorManager.cpp" />
+    <ClCompile Include="BaseEventManager.cpp" />
+    <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="libs\pugixml\pugixml.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
@@ -85,6 +87,11 @@
   <ItemGroup>
     <ClInclude Include="AbstractActor.h" />
     <ClInclude Include="ActorManager.h" />
+    <ClInclude Include="AttributeType.h" />
+    <ClInclude Include="BaseEventManager.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="EventListener.h" />
+    <ClInclude Include="EventType.h" />
     <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
     <ClInclude Include="libs\pugixml\pugixml.hpp" />
     <ClInclude Include="MovableActor.h" />
