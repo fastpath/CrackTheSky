@@ -76,8 +76,11 @@
   <ItemGroup>
     <ClCompile Include="AbstractActor.cpp" />
     <ClCompile Include="ActorManager.cpp" />
-    <ClCompile Include="BaseEventManager.cpp" />
-    <ClCompile Include="EventListener.cpp" />
+    <ClCompile Include="EventManagerImpl.cpp" />
+    <ClCompile Include="IBaseEventManager.cpp" />
+    <ClCompile Include="IEventListener.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="InputListener.cpp" />
     <ClCompile Include="libs\pugixml\pugixml.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
@@ -88,10 +91,13 @@
     <ClInclude Include="AbstractActor.h" />
     <ClInclude Include="ActorManager.h" />
     <ClInclude Include="AttributeType.h" />
-    <ClInclude Include="BaseEventManager.h" />
+    <ClInclude Include="EventManagerImpl.h" />
+    <ClInclude Include="IBaseEventManager.h" />
     <ClInclude Include="Events.h" />
-    <ClInclude Include="EventListener.h" />
+    <ClInclude Include="IEventListener.h" />
     <ClInclude Include="EventType.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="InputListener.h" />
     <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
     <ClInclude Include="libs\pugixml\pugixml.hpp" />
     <ClInclude Include="MovableActor.h" />

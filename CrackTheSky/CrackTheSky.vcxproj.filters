@@ -22,6 +22,15 @@
     <Filter Include="Source Files\Util">
       <UniqueIdentifier>{3a742652-6208-4410-a3f4-0e51a0c5f9a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{aefd75a3-252f-4997-a380-0b4b9d71f00b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Listener">
+      <UniqueIdentifier>{a6c6936a-eefe-40c7-bf2a-1e04308abcfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{f7b988fe-f44c-41e7-8fea-bbf07ec47de8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,10 +54,19 @@
     <ClCompile Include="libs\pugixml\pugixml.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseEventManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="EventManagerImpl.cpp">
+      <Filter>Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="EventListener.cpp">
+    <ClCompile Include="IBaseEventManager.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEventListener.cpp">
+      <Filter>Source Files\Events\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="InputListener.cpp">
+      <Filter>Source Files\Events\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,12 +92,6 @@
     <ClInclude Include="libs\pugixml\pugixml.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseEventManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventListener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Events.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,6 +99,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EventType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBaseEventManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManagerImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IEventListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

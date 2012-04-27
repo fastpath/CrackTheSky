@@ -8,22 +8,26 @@
 #include "MovableActor.h"
 #include "Pose.h"
 #include "ActorManager.h"
+#include "InputHandler.h"
+#include "EventManagerImpl.h"
 
 const int FRAMERATE = 60;
 const float DT = 1.0/FRAMERATE;
 const float EPSILON = 0.01;
 
+EventManagerImpl* m_evtMgr;
 
 
 int main ()
 {
-	sf::RenderWindow Window(sf::VideoMode(800,600,32),"SFML DEMO");
-	sf::ContextSettings cs = Window.getSettings();
+	boost::shared_ptr<sf::RenderWindow> Window(new sf::RenderWindow(sf::VideoMode(800,600,32),"Crack the Sky"));
+	sf::ContextSettings cs = Window->getSettings();
 
 	ActorManager::getNewMovableActor("cody");
 
-
 	boost::container::vector<boost::shared_ptr<MovableActor> > actors;
+
+	m_evtMgr = new EventManagerImpl("Super EventManager", true);
 
 	boost::shared_ptr<MovableActor> cody(new MovableActor());
 	cody->setTexture(*TextureLoader::getTexture("cody2_500x1000"));
@@ -64,29 +68,21 @@ int main ()
 	float speed = 400.0;
 	sf::Time currentTime = clock.getElapsedTime();
 
-	Window.setFramerateLimit(FRAMERATE);
-	while (Window.isOpen())
+	Window->setFramerateLimit(FRAMERATE);
+
+		
+	std::cout << "Creating InputHandler" << std::endl;
+	boost::shared_ptr<InputHandler> input(new InputHandler(Window));
+
+
+	while (Window->isOpen())
 	{
 		sf::Time newTime = clock.getElapsedTime();
 		float frameTime = newTime.asSeconds() - currentTime.asSeconds();
 		//std::cout << " time  " << frameTime << std::endl;
         currentTime = newTime;
 		
-
-		sf::Event Event;
-		while (Window.pollEvent(Event))
-		{
-			switch (Event.type)
-			{
-			case sf::Event::Closed:
-				Window.close();
-				break;
-			case sf::Event::KeyReleased:
-					cody->accelerate(Pose(0,0,0));
-			default:
-				break;
-			}
-		}
+		input->handleKeys();
 
 		sf::Vector2f direction = cody->getAcceleration().getDirection();
 		//std::cout << "Acc x " << cody->getAcceleration().getDirection().x << "  y " << cody->getAcceleration().getDirection().y << std::endl;
@@ -115,11 +111,11 @@ int main ()
             frameTime -= DT;
             t += deltaTime;
          }
-		Window.clear(sf::Color(0,255,255));
+		Window->clear(sf::Color(0,255,255));
 		BOOST_FOREACH (boost::shared_ptr<MovableActor> actor, actors) {
-			Window.draw(*actor);
+			Window->draw(*actor);
 		}
-		Window.display();
+		Window->display();
 	}
 
 	return 0;
