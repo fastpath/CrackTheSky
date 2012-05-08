@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractActor.cpp" />
     <ClCompile Include="ActorManager.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="EventManagerImpl.cpp" />
     <ClCompile Include="IBaseEventManager.cpp" />
     <ClCompile Include="IEventListener.cpp" />
@@ -85,12 +86,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
     <ClCompile Include="Pose.cpp" />
+    <ClCompile Include="Property.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractActor.h" />
     <ClInclude Include="ActorManager.h" />
-    <ClInclude Include="AttributeType.h" />
+    <ClInclude Include="EnumNames.h" />
     <ClInclude Include="EventManagerImpl.h" />
     <ClInclude Include="IBaseEventManager.h" />
     <ClInclude Include="Events.h" />
@@ -102,6 +104,8 @@
     <ClInclude Include="libs\pugixml\pugixml.hpp" />
     <ClInclude Include="MovableActor.h" />
     <ClInclude Include="Pose.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertyType.h" />
     <ClInclude Include="TextureLoader.h" />
   </ItemGroup>
   <ItemGroup>

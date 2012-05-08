@@ -2,8 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/container/vector.hpp>
+#include <vector>
 #include <boost/foreach.hpp>
+#include "EnumNames.h"
 #include "TextureLoader.h"
 #include "MovableActor.h"
 #include "Pose.h"
@@ -16,17 +17,11 @@ const float DT = 1.0/FRAMERATE;
 const float EPSILON = 0.01;
 
 EventManagerImpl* m_evtMgr;
+std::vector<boost::shared_ptr<MovableActor> > actors;
 
 
-int main ()
+void initialize(void)
 {
-	boost::shared_ptr<sf::RenderWindow> Window(new sf::RenderWindow(sf::VideoMode(800,600,32),"Crack the Sky"));
-	sf::ContextSettings cs = Window->getSettings();
-
-	ActorManager::getNewMovableActor("cody");
-
-	boost::container::vector<boost::shared_ptr<MovableActor> > actors;
-
 	m_evtMgr = new EventManagerImpl("Super EventManager", true);
 
 	boost::shared_ptr<MovableActor> cody(new MovableActor());
@@ -61,6 +56,17 @@ int main ()
 	astroid3->setScale(0.5,0.5);
 	astroid3->accelerate(Pose(0.0,0.0,30));
 	actors.push_back(astroid3);
+}
+
+int main ()
+{
+
+	initialize();
+
+	boost::shared_ptr<sf::RenderWindow> Window(new sf::RenderWindow(sf::VideoMode(800,600,32),"Crack the Sky"));
+	sf::ContextSettings cs = Window->getSettings();
+
+	ActorManager::getNewMovableActor("cody");
 
 	sf::Clock clock;
 
@@ -84,7 +90,7 @@ int main ()
 		
 		input->handleKeys();
 
-		sf::Vector2f direction = cody->getAcceleration().getDirection();
+		sf::Vector2f direction = actors[0]->getAcceleration().getDirection();
 		//std::cout << "Acc x " << cody->getAcceleration().getDirection().x << "  y " << cody->getAcceleration().getDirection().y << std::endl;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			direction.y = -speed;
@@ -98,7 +104,7 @@ int main ()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			direction.x = -speed;
 		}
-		cody->accelerate(Pose(direction.x,direction.y,0));
+		actors[0]->accelerate(Pose(direction.x,direction.y,0));
 		
 		while ( frameTime > 0.0 - EPSILON)
          {

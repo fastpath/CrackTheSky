@@ -1,9 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <boost/shared_ptr.hpp>
 #include <iostream>
 #include "EventManagerImpl.h"
+#include "Property.h"
 
 class InputHandler
 {

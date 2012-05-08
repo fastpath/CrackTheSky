@@ -1,6 +1,5 @@
 #pragma once
 #include "IBaseEventManager.h"
-#include "IEventListener.h"
 #include <map>
 
 const unsigned int EVENTMANAGER_NUM_QUEUES = 2;
@@ -32,7 +31,7 @@ public:
 	virtual bool VQueueEvent(EventPtr& p_event);
 	virtual bool VAbortEvent(const EventType& p_inType, bool p_allOfType);
 
-	virtual bool VValidateType(EventType p_type);
+	virtual bool VValidateType(EventType& p_type);
 
 };
 

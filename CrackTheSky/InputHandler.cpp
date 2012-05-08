@@ -13,13 +13,21 @@ InputHandler::~InputHandler(void)
 }
 
 void InputHandler::handleKeys() {
-		sf::Event Event;
-		while (m_app->pollEvent(Event))
+		//TProperty<int>* bla =static_cast<TProperty<int>*>(tmp);
+
+		sf::Event sfmlEvent;
+		while (m_app->pollEvent(sfmlEvent))
 		{
-			switch (Event.type)
+			EventPtr keyEvent(new Event(KEY_PRESSED,0.0f));
+			PropertyPtr key;
+			switch (sfmlEvent.type)
 			{
 			case sf::Event::Closed:
 				m_app->close();
+				break;
+			case sf::Event::KeyPressed:
+				key = PropertyPtr(new TProperty<sf::Keyboard::Key>(KEY,sfmlEvent.key.code));
+				keyEvent->addProperty(key);
 				break;
 			case sf::Event::KeyReleased:
 				std::cout << "Taste losgelassen" << std::endl;
@@ -27,6 +35,8 @@ void InputHandler::handleKeys() {
 			default:
 				break;
 			}
+
+			IBaseEventManager::Get()->VQueueEvent(keyEvent);
 		}
 
 		

@@ -120,6 +120,8 @@ bool EventManagerImpl::VQueueEvent(EventPtr& p_event) {
 	if (m_activeQueue < 0 || m_activeQueue > EVENTMANAGER_NUM_QUEUES)
 		return false; //BIG ERROR
 
+	std::cout << "Neues Event: " << EventTypeValueNames[p_event->GetEventType()] << std::endl;
+
 	if (!p_event)
 	{
 		return false;
@@ -182,7 +184,7 @@ bool EventManagerImpl::VRemoveScriptEventListener(const EventListenerPtr& p_list
 	return true;
 }
 
-bool EventManagerImpl::VValidateType(EventType p_type)
+bool EventManagerImpl::VValidateType(EventType& p_type)
 {
 	return true;
 }

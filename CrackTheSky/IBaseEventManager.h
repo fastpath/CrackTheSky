@@ -1,5 +1,4 @@
 #pragma once
-#include "Events.h"
 #include "IEventListener.h"
 #include <list>
 
@@ -25,7 +24,7 @@ public:
 	virtual bool VQueueEvent(EventPtr& p_event) = 0;
 	virtual bool VAbortEvent(const EventType& p_inType, bool p_allOfType) = 0;
 
-	virtual bool VValidateType(EventType p_type) = 0;
+	virtual bool VValidateType(EventType& p_type) = 0;
 
 	static IBaseEventManager* Get(void);
 

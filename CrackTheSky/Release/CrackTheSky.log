@@ -1,42 +1,50 @@
-﻿Build started 4/27/2012 2:25:28 PM.
-     1>Project "C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\CrackTheSky\CrackTheSky.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Release\CrackTheSky.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt InputHandler.cpp main.cpp
-         InputHandler.cpp
-         main.cpp
-     1>main.cpp(14): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>main.cpp(15): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>main.cpp(33): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>main.cpp(33): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>main.cpp(43): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>main.cpp(43): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>main.cpp(51): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>main.cpp(51): warning C4305: 'argument' : truncation from 'double' to 'float'
-       Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\Release\CrackTheSky.exe" /NOLOGO "sfml-graphics.lib" "sfml-audio.lib" "sfml-window.lib" "sfml-system.lib" "sfml-network.lib" "sfml-main.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\CrackTheSky.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\Release\CrackTheSky.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\Release\CrackTheSky.lib" /MACHINE:X86 Release\AbstractActor.obj
-         Release\ActorManager.obj
-         Release\EventManagerImpl.obj
-         Release\IBaseEventManager.obj
-         Release\IEventListener.obj
-         Release\InputHandler.obj
-         Release\InputListener.obj
-         Release\pugixml.obj
-         Release\main.obj
-         Release\MovableActor.obj
-         Release\Pose.obj
-         Release\TextureLoader.obj
-         Generating code
-         Finished generating code
-         CrackTheSky.vcxproj -> C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\Release\CrackTheSky.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\Release\CrackTheSky.exe;#1" /manifest Release\CrackTheSky.exe.intermediate.manifest
-       FinalizeBuildStatus:
-         Deleting file "Release\CrackTheSky.unsuccessfulbuild".
-         Touching "Release\CrackTheSky.lastbuildstate".
-     1>Done Building Project "C:\Users\Ecki\Documents\programming\Cplusplus\CrackTheSky\CrackTheSky\CrackTheSky.vcxproj" (build target(s)).
+﻿Build started 29.04.2012 15:17:46.
+Project "C:\Users\Erik\Documents\progging\CPP\CrackTheSky\CrackTheSky\CrackTheSky.vcxproj" on node 2 (build target(s)).
+InitializeBuildStatus:
+  Creating "Release\CrackTheSky.unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Event.cpp EventManagerImpl.cpp IBaseEventManager.cpp IEventListener.cpp InputHandler.cpp InputListener.cpp Property.cpp main.cpp
+  Event.cpp
+  EventManagerImpl.cpp
+  IBaseEventManager.cpp
+  IEventListener.cpp
+  InputHandler.cpp
+  InputListener.cpp
+  Property.cpp
+  main.cpp
+main.cpp(15): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+main.cpp(16): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+main.cpp(29): warning C4305: 'argument' : truncation from 'double' to 'float'
+main.cpp(29): warning C4305: 'argument' : truncation from 'double' to 'float'
+main.cpp(39): warning C4305: 'argument' : truncation from 'double' to 'float'
+main.cpp(39): warning C4305: 'argument' : truncation from 'double' to 'float'
+main.cpp(47): warning C4305: 'argument' : truncation from 'double' to 'float'
+main.cpp(47): warning C4305: 'argument' : truncation from 'double' to 'float'
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erik\Documents\progging\CPP\CrackTheSky\Release\CrackTheSky.exe" /NOLOGO "sfml-graphics.lib" "sfml-audio.lib" "sfml-window.lib" "sfml-system.lib" "sfml-network.lib" "sfml-main.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\CrackTheSky.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Erik\Documents\progging\CPP\CrackTheSky\Release\CrackTheSky.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erik\Documents\progging\CPP\CrackTheSky\Release\CrackTheSky.lib" /MACHINE:X86 Release\AbstractActor.obj
+  Release\ActorManager.obj
+  Release\Event.obj
+  Release\EventManagerImpl.obj
+  Release\IBaseEventManager.obj
+  Release\IEventListener.obj
+  Release\InputHandler.obj
+  Release\InputListener.obj
+  Release\pugixml.obj
+  Release\main.obj
+  Release\MovableActor.obj
+  Release\Pose.obj
+  Release\Property.obj
+  Release\TextureLoader.obj
+  Generating code
+  Finished generating code
+  CrackTheSky.vcxproj -> C:\Users\Erik\Documents\progging\CPP\CrackTheSky\Release\CrackTheSky.exe
+Manifest:
+  C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Erik\Documents\progging\CPP\CrackTheSky\Release\CrackTheSky.exe;#1" /manifest Release\CrackTheSky.exe.intermediate.manifest
+FinalizeBuildStatus:
+  Deleting file "Release\CrackTheSky.unsuccessfulbuild".
+  Touching "Release\CrackTheSky.lastbuildstate".
+Done Building Project "C:\Users\Erik\Documents\progging\CPP\CrackTheSky\CrackTheSky\CrackTheSky.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.72
+Time Elapsed 00:00:16.30
