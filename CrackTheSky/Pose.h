@@ -5,13 +5,16 @@ class Pose
 {
 public:
 	Pose(void);
+	Pose(float x, float y, float z, float rot);
 	Pose(float x, float y, float rot);
 	~Pose(void);
 
-	sf::Vector2f getDirection();
+	sf::Vector3f getVector3f();
+	sf::Vector2f getVector2f();
+
 	float getRotation();
 private:
-	sf::Vector2f m_position;
+	sf::Vector3f m_vector;
 	float m_rotation;
 
 };

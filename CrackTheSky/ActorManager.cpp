@@ -1,9 +1,9 @@
 #include "ActorManager.h"
 
-boost::container::map<int,boost::shared_ptr<AbstractActor> > ActorManager::s_actorMap;
+std::map<ActorType,std::list<ActorPtr> > ActorManager::s_actorMap;
 std::string ActorManager::s_xmlFolder = "../CrackTheSky/data/xml/";
 
-boost::shared_ptr<AbstractActor> ActorManager::getNewMovableActor(std::string actorName) {
+ActorPtr ActorManager::getNewMovableActor(std::string actorName) {
 	pugi::xml_document doc;
 	std::string fileName = s_xmlFolder+"MovableActors.xml";
 
@@ -15,3 +15,16 @@ boost::shared_ptr<AbstractActor> ActorManager::getNewMovableActor(std::string ac
 	return smartPtr;
 }
 
+void ActorManager::addActor(ActorPtr p_actor)
+{
+	s_actorMap[p_actor->getType()].push_back(p_actor);
+}
+
+void ActorManager::update(float p_dt)
+{
+	for (auto movableActor = s_actorMap[MOVABLE_ACTOR].begin(); movableActor != s_actorMap[MOVABLE_ACTOR].end(); ++movableActor)
+	{
+		boost::shared_ptr<MovableActor> movie = boost::shared_dynamic_cast<MovableActor>(*movableActor);
+		movie->update(p_dt);
+	}
+}

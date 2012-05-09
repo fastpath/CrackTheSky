@@ -73,6 +73,9 @@
       <Filter>Source Files\Events</Filter>
     </ClCompile>
     <ClCompile Include="Event.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,6 +129,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EnumNames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,9 +1,10 @@
 #pragma once
 #include "AbstractActor.h"
+#include <SFML/Graphics.hpp>
 #include "Pose.h"
 #include <iostream>
 
-class MovableActor : public AbstractActor
+class MovableActor : public AbstractActor, public sf::Sprite
 {
 public:
 	MovableActor(void);

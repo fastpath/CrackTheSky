@@ -7,6 +7,8 @@
 #include "EventManagerImpl.h"
 #include "Property.h"
 
+const float KEY_REPEAT_DELTA = 200;
+
 class InputHandler
 {
 public:
@@ -16,7 +18,6 @@ public:
 	void handleKeys();
 
 private:
-	bool m_running;
 	boost::shared_ptr<sf::RenderWindow> m_app;
 };
 

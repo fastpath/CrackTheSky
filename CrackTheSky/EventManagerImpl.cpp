@@ -76,7 +76,7 @@ bool EventManagerImpl::VProcessEvents(long p_time)
 			for (auto itListener = eventListeners.begin(); itListener != eventListeners.end(); ++itListener)
 			{
 				EventListenerPtr listener = (*itListener);
-				listener->processEvent(pEvent);
+				listener->VprocessEvent(pEvent);
 			}
 		}
 		// Time check
@@ -109,7 +109,7 @@ bool EventManagerImpl::VTriggerEvent(EventPtr& p_event)
 		for (EventListenerList::const_iterator itListener = eventListenerList.begin(); itListener != eventListenerList.end(); ++itListener)
 		{
 			EventListenerPtr listener = (*itListener);
-			listener->processEvent(p_event);
+			listener->VprocessEvent(p_event);
 			processed = true;
 		}
 	}
@@ -120,7 +120,7 @@ bool EventManagerImpl::VQueueEvent(EventPtr& p_event) {
 	if (m_activeQueue < 0 || m_activeQueue > EVENTMANAGER_NUM_QUEUES)
 		return false; //BIG ERROR
 
-	std::cout << "Neues Event: " << EventTypeValueNames[p_event->GetEventType()] << std::endl;
+	//std::cout << "Neues Event: " << EventTypeValueNames[p_event->GetEventType()] << std::endl;
 
 	if (!p_event)
 	{

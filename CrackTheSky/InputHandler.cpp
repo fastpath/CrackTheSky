@@ -4,7 +4,6 @@
 InputHandler::InputHandler(boost::shared_ptr<sf::RenderWindow> p_app)
 {
 	m_app = p_app;
-	m_running = false;
 }
 
 
@@ -18,7 +17,8 @@ void InputHandler::handleKeys() {
 		sf::Event sfmlEvent;
 		while (m_app->pollEvent(sfmlEvent))
 		{
-			EventPtr keyEvent(new Event(KEY_PRESSED,0.0f));
+			EventPtr keyPressedEvent(new Event(KEY_PRESSED,0.0f));
+			EventPtr keyRepeatEvent(new Event(KEY_REPEAT,0.0f));
 			PropertyPtr key;
 			switch (sfmlEvent.type)
 			{
@@ -27,16 +27,18 @@ void InputHandler::handleKeys() {
 				break;
 			case sf::Event::KeyPressed:
 				key = PropertyPtr(new TProperty<sf::Keyboard::Key>(KEY,sfmlEvent.key.code));
-				keyEvent->addProperty(key);
+				keyPressedEvent->addProperty(key);
+
+				std::cout << "Taste gedrueckt" << std::endl;
 				break;
 			case sf::Event::KeyReleased:
-				std::cout << "Taste losgelassen" << std::endl;
-				IBaseEventManager::Get()->VProcessEvents(5);
+				
+
 			default:
 				break;
 			}
 
-			IBaseEventManager::Get()->VQueueEvent(keyEvent);
+			IBaseEventManager::Get()->VQueueEvent(keyPressedEvent);
 		}
 
 		

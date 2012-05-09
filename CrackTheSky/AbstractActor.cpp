@@ -1,9 +1,10 @@
 #include "AbstractActor.h"
 
 
-AbstractActor::AbstractActor(void)
+AbstractActor::AbstractActor(int p_id, ActorType p_type)
 {
-	m_id = 0;
+	m_id = p_id;
+	m_type = p_type;
 }
 
 
@@ -11,10 +12,11 @@ AbstractActor::~AbstractActor(void)
 {
 }
 
-AbstractActor::AbstractActor(int id) {
-	m_id = id;
-}
-
 int AbstractActor::getId() {
 	return m_id;
+}
+
+ActorType AbstractActor::getType()
+{
+	return m_type;
 }

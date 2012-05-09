@@ -1,17 +1,17 @@
 #include "MovableActor.h"
 
 
-MovableActor::MovableActor(void)
+MovableActor::MovableActor(void) : AbstractActor(-1, MOVABLE_ACTOR)
 {
 	
 }
 
-MovableActor::MovableActor(int id) : AbstractActor(id) {
+MovableActor::MovableActor(int id) : AbstractActor(id,MOVABLE_ACTOR) {
 
 }
 
 void MovableActor::update(float dt) {
-	sf::Vector2f offset = m_acceleration.getDirection()*dt;
+	sf::Vector2f offset = m_acceleration.getVector2f()*dt;
 	float rotateOffset = m_acceleration.getRotation()*dt;
 	this->move(offset);
 	this->rotate(rotateOffset);

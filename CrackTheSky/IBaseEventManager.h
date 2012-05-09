@@ -3,7 +3,6 @@
 #include <list>
 
 typedef std::list<EventType> EventTypeList;
-typedef boost::shared_ptr<Event> EventPtr;
 typedef boost::shared_ptr<IEventListener> EventListenerPtr;
 
 class IBaseEventManager

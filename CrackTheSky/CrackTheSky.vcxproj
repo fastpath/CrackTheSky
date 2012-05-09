@@ -85,6 +85,7 @@
     <ClCompile Include="libs\pugixml\pugixml.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableActor.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pose.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
@@ -92,6 +93,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractActor.h" />
     <ClInclude Include="ActorManager.h" />
+    <ClInclude Include="ActorType.h" />
     <ClInclude Include="EnumNames.h" />
     <ClInclude Include="EventManagerImpl.h" />
     <ClInclude Include="IBaseEventManager.h" />
@@ -103,6 +105,7 @@
     <ClInclude Include="libs\pugixml\pugiconfig.hpp" />
     <ClInclude Include="libs\pugixml\pugixml.hpp" />
     <ClInclude Include="MovableActor.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Pose.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="PropertyType.h" />

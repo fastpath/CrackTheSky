@@ -8,6 +8,6 @@ public:
 	IEventListener(void);
 	~IEventListener(void);
 
-	virtual bool processEvent(boost::shared_ptr<Event> p_event) = 0;
+	virtual bool VprocessEvent(EventPtr p_event) = 0;
 };
 
